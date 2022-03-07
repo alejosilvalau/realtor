@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useContext } from "react";
 import Image from "next/image";
 import { Box, Icon, Flex } from "@chakra-ui/react";
@@ -34,11 +35,7 @@ const RightArrow = () => {
 };
 
 const ImageScrollbar = ({ data }) => (
-	<ScrollMenu
-		LeftArrow={LeftArrow}
-		RightArrow={RightArrow}
-		style={{ overflow: "hidden" }}
-	>
+	<ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
 		{data.map(item => (
 			<Box width='910px' itemId={item.id} overflow='hidden' p='1' key={item.id}>
 				<Image
