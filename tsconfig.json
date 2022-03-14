@@ -7,7 +7,7 @@
 		"strict": true,
 		"removeComments": true,
 		"noImplicitAny": true,
-		"no-unused-variable": [true, { "ignore-pattern": "^_" }],
+		"noUnusedLocals": false,
 		"strictNullChecks": true,
 		"strictFunctionTypes": true,
 		"noImplicitThis": true,
