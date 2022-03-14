@@ -1,10 +1,11 @@
-import { Box, Flex, Spacer, Text, Avatar } from "@chakra-ui/react";
-import { FaBed, FaBath } from "react-icons/fa";
-import { BsGridFill } from "react-icons/bs";
-import { GoVerified } from "react-icons/go";
+// @ts-nocheck
+import { Avatar, Box, Flex, Text } from "@chakra-ui/react";
 import millify from "millify";
-import { baseUrl, fetchApi } from "../../utils/fetchApi";
+import { BsGridFill } from "react-icons/bs";
+import { FaBath, FaBed } from "react-icons/fa";
+import { GoVerified } from "react-icons/go";
 import ImageScrollbar from "../../components/ImageScrollbar";
+import { baseUrl, fetchApi } from "../../utils/fetchApi";
 
 const PropertyDetails = ({
 	propertyDetails: {
@@ -23,7 +24,7 @@ const PropertyDetails = ({
 		amenities,
 		photos,
 	},
-}) => (
+}): PropertyDetailsI => (
 	<Box maxWidth='1000px' margin='auto' p='4'>
 		{photos && <ImageScrollbar data={photos} />}
 		<Box w='full' p='6'>
@@ -104,8 +105,8 @@ const PropertyDetails = ({
 					</Text>
 				)}
 				<Flex flexWrap='wrap'>
-					{amenities.map(item =>
-						item.amenities.map(amenity => (
+					{amenities.map((item: { amenities: any[] }) =>
+						item.amenities.map((amenity) => (
 							<Text
 								fontWeight='bold'
 								color='blue.400'

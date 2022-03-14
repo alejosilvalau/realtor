@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
@@ -23,7 +24,7 @@ const Search = ({ properties, rdata }) => {
 				fontWeight='Black'
 				justifyContent='center'
 				alignItems='center'
-				onClick={() => setSearchFilters(prevFilters => !prevFilters)}
+				onClick={() => setSearchFilters((prevFilters) => !prevFilters)}
 			>
 				<Text>Search Property By Filters</Text>
 				<Icon paddingLeft='2' w='7' as={BsFilter} />
@@ -33,7 +34,7 @@ const Search = ({ properties, rdata }) => {
 				Properties {router.query.purpose}
 			</Text>
 			<Flex flexWrap='wrap'>
-				{properties.map(property => (
+				{properties.map((property) => (
 					<Property property={property} key={property.id} />
 				))}
 			</Flex>

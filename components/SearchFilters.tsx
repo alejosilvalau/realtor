@@ -11,11 +11,16 @@ const SearchFilters = () => {
 
 		const values = getFilterValues(filterValues);
 
-		values.forEach((item) => {
-			if (item.value && filterValues?.[item.name]) {
-				query[item.name] = item.value;
+		values.forEach(
+			(item: {
+				value: string | string[] | undefined;
+				name: string | number;
+			}) => {
+				if (item.value && filterValues?.[item.name]) {
+					query[item.name] = item.value;
+				}
 			}
-		});
+		);
 
 		router.push({ pathname: path, query });
 	};

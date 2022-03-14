@@ -1,17 +1,17 @@
 import {
+	Box,
+	Flex,
+	IconButton,
 	Menu,
 	MenuButton,
-	MenuList,
 	MenuItem,
-	IconButton,
-	Flex,
-	Box,
+	MenuList,
 	Spacer,
 } from "@chakra-ui/react";
-import { FcMenu, FcHome, FcAbout } from "react-icons/fc";
-import { BsSearch } from "react-icons/bs";
-import { FiKey } from "react-icons/fi";
 import Link from "next/link";
+import { BsSearch } from "react-icons/bs";
+import { FcAbout, FcHome, FcMenu } from "react-icons/fc";
+import { FiKey } from "react-icons/fi";
 
 const NavBar = () => (
 	<Flex p='2' borderBottom='1px' borderColor='gray.100'>

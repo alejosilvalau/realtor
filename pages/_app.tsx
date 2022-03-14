@@ -1,11 +1,11 @@
-import "../styles/globals.css";
+import { ChakraProvider } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
-import { Box, ChakraProvider } from "@chakra-ui/react";
-import Router from "next/router";
 import Head from "next/head";
+import Router from "next/router";
 import NProgress from "nprogress";
-import Layout from "../components/Layout";
 import ForceLightMode from "../components/ForceLightMode";
+import Layout from "../components/Layout";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
 	NProgress.configure({ showSpinner: false });

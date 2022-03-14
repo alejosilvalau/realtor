@@ -1,13 +1,7 @@
 // @ts-nocheck
-import {
-	Box,
-	ChakraComponent,
-	ChakraProps,
-	Flex,
-	Icon,
-} from "@chakra-ui/react";
+import { Box, Flex, Icon } from "@chakra-ui/react";
 import Image from "next/image";
-import { ReactChildren, useContext } from "react";
+import { useContext } from "react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 import "./react_augmented";
