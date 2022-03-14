@@ -7,6 +7,21 @@ import { GoVerified } from "react-icons/go";
 import millify from "millify";
 import DefaultImage from "../assets/images/house.jpeg";
 
+interface AbstractProperty {
+	property: {
+		coverPhoto: any;
+		price: number;
+		rentFrequency: string;
+		rooms: number;
+		title: string;
+		baths: number;
+		area: number;
+		agency: any;
+		isVerified: string;
+		externalID: number;
+	};
+}
+
 const Property = ({
 	property: {
 		coverPhoto,
@@ -20,7 +35,7 @@ const Property = ({
 		isVerified,
 		externalID,
 	},
-}) => {
+}: AbstractProperty) => {
 	return (
 		<Link href={`/property/${externalID}`} passHref>
 			<Flex

@@ -1,9 +1,16 @@
 // @ts-nocheck
-import { useContext } from "react";
+import {
+	Box,
+	ChakraComponent,
+	ChakraProps,
+	Flex,
+	Icon,
+} from "@chakra-ui/react";
 import Image from "next/image";
-import { Box, Icon, Flex } from "@chakra-ui/react";
+import { ReactChildren, useContext } from "react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
+import "./react_augmented";
 
 const LeftArrow = () => {
 	const { scrollPrev } = useContext(VisibilityContext);
@@ -34,9 +41,25 @@ const RightArrow = () => {
 	);
 };
 
-const ImageScrollbar = ({ data }) => (
+interface AbstractProperty {
+	data: {
+		coverPhoto: any;
+		price: number;
+		rentFrequency: string;
+		rooms: number;
+		title: string;
+		baths: number;
+		area: number;
+		agency: any;
+		isVerified: string;
+		externalID: number;
+		map: (item: any) => any;
+	};
+}
+
+const ImageScrollbar = ({ data }: AbstractProperty) => (
 	<ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-		{data.map(item => (
+		{data.map((item: any) => (
 			<Box width='910px' itemId={item.id} overflow='hidden' p='1' key={item.id}>
 				<Image
 					placeholder='blur'
